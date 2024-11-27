@@ -1,0 +1,71 @@
+{
+  "name": "sample-copilot-chat",
+  "displayName": "sample-copilot-chat",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sample-copilot-chat.helloWorld",
+        "title": "Hello World"
+      }
+    ],
+    "chatParticipants": [
+      {
+        "id": "stock-chat.stockTools",
+        "name": "stockTools",
+        "description": "Get stock price information using Yahoo Finance"
+      }
+    ],
+    "languageModelTools": [
+      {
+        "name": "stock-chat_getPrice",
+        "tags": ["stocks", "finance"],
+        "displayName": "Get Stock Price",
+        "modelDescription": "Get current stock price information",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "symbol": {
+              "type": "string",
+              "description": "Stock symbol (e.g., AAPL, MSFT)"
+            }
+          },
+          "required": ["symbol"]
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.95.0",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint": "^9.13.0",
+    "typescript": "^5.6.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "@types/node-fetch": "^2.6.11"
+  },
+  "dependencies": {
+    "yahoo-finance2": "^2.9.1",
+    "@vscode/chat-extension-utils": "^0.0.0-alpha.1"
+  }
+}
