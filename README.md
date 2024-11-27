@@ -1,71 +1,74 @@
-# sample-copilot-chat README
+# Sample Copilot Chat Extension
 
-This is the README for your extension "sample-copilot-chat". After writing up a brief description, we recommend including the following sections.
+This is a sample Visual Studio Code extension that provides stock price information using Yahoo Finance. The extension integrates with GitHub Copilot Chat to offer a seamless experience for users to get stock information.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Fetch current stock prices using Yahoo Finance.
+- Integrate with GitHub Copilot Chat for interactive stock price queries.
+- Register and use custom chat participants and tools.
 
-For example if there is an image subfolder under your extension project workspace:
+## Getting Started
 
-\!\[feature X\]\(images/feature-x.png\)
+### Prerequisites
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- [Visual Studio Code](https://code.visualstudio.com/) (version 1.95.0 or higher)
+- [Node.js](https://nodejs.org/) (version 14.x or higher)
+- [npm](https://www.npmjs.com/)
 
-## Requirements
+### Installation
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/your-username/sample-copilot-chat.git
+    cd sample-copilot-chat
+    ```
 
-## Extension Settings
+2. Install the dependencies:
+    ```sh
+    npm install
+    ```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+3. Compile the TypeScript code:
+    ```sh
+    npm run compile
+    ```
 
-For example:
+### Running the Extension
 
-This extension contributes the following settings:
+1. Open the project in Visual Studio Code.
+2. Press `F5` to open a new window with your extension loaded.
+3. Run your command from the command palette by pressing (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac) and typing `Hello World`.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+### Debugging
 
-## Known Issues
+- Set breakpoints in your code inside `src/extension.ts` to debug your extension.
+- Find output from your extension in the debug console.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### Testing
 
-## Release Notes
+1. Run the "watch" task via the **Tasks: Run Task** command.
+2. Open the Testing view from the activity bar and click the "Run Test" button, or use the hotkey `Ctrl/Cmd + ; A`.
+3. See the output of the test result in the Test Results view.
 
-Users appreciate release notes as you update your extension.
+## Project Structure
 
-### 1.0.0
+- `src/extension.ts`: Main file where the extension is implemented.
+- `src/stockTools.ts`: Contains the implementation of the `StockPriceTool` class.
+- `.vscode/`: Contains VS Code specific configuration files.
+- `package.json`: Manifest file that declares the extension and its dependencies.
+- `tsconfig.json`: TypeScript configuration file.
+- `eslint.config.mjs`: ESLint configuration file.
 
-Initial release of ...
+## Contributing
 
-### 1.0.1
+Contributions are welcome! Please open an issue or submit a pull request for any changes or improvements.
 
-Fixed issue #.
+## License
 
-### 1.1.0
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-Added features X, Y, and Z.
+## Acknowledgements
 
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- [Yahoo Finance API](https://www.npmjs.com/package/yahoo-finance2)
+- [GitHub Copilot Chat](https://github.com/github/copilot-chat)
